@@ -12,7 +12,7 @@ def driver(request):
 
 
 def test_example(driver):
-    driver.get("http://www.google.com/")
-    driver.find_element_by_name("q").send_keys("webdriver")
-    driver.find_element_by_name("btnG").click()
-    WebDriverWait(driver, 10).until(EC.title_is("webdriver - Поиск в Google"))
+    driver.get("http://localhost/litecart/admin/")
+    driver.find_element_by_name("username").send_keys("admin")
+    driver.find_element_by_name("password").send_keys("admin")
+    driver.find_element_by_name("login").click()
