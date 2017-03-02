@@ -22,6 +22,7 @@ def test_l09_1(driver):
     driver.find_element_by_name("password").send_keys("admin")
     driver.find_element_by_name("login").click()
     wait = WebDriverWait(driver, 10)
+    #driver.implicitly_wait(10)
 
     countries = [i.text for i in driver.find_elements_by_css_selector("tr.row a:not([title])")]
     assert (countries == sorted(countries))
@@ -42,7 +43,8 @@ def test_l09_2(driver):
     driver.find_element_by_name("username").send_keys("admin")
     driver.find_element_by_name("password").send_keys("admin")
     driver.find_element_by_name("login").click()
-    wait = WebDriverWait(driver, 10)
+    #wait = WebDriverWait(driver, 10)
+    driver.implicitly_wait(10)
 
     zones_number = len(driver.find_elements_by_css_selector("tr.row"))
 

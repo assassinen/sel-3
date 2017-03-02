@@ -37,7 +37,9 @@ def is_correct_prices_style(driver, list, value):
         assert driver.find_element_by_css_selector(list[0][0]).value_of_css_property(value) == list[0][1]
         assert driver.find_element_by_css_selector(list[1][0]).value_of_css_property(value) == list[1][1]
     elif value == "font-size":
-        assert driver.find_element_by_css_selector(list[0][0]).value_of_css_property(value) < driver.find_element_by_css_selector(list[1][0]).value_of_css_property(value)
+        font_regular = float(driver.find_element_by_css_selector(list[0][0]).value_of_css_property(value)[0:-2])
+        font_campaign = float(driver.find_element_by_css_selector(list[1][0]).value_of_css_property(value)[0:-2])
+        assert font_regular < font_campaign
     else:
         assert False
 
