@@ -3,6 +3,8 @@ __author__ = 'NovikovII'
 # -*- coding: utf-8 -*-
 
 from python_example.lib.fixture import driver
+from selenium.webdriver.support.wait import WebDriverWait
+from python_example.lib.random_string import random_string
 
 
 def test_l12(driver):
