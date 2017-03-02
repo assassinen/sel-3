@@ -2,24 +2,9 @@ __author__ = 'NovikovII'
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import pytest
-import random
-import string
-from selenium import webdriver
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.support.wait import WebDriverWait
-
-
-@pytest.fixture
-def driver(request):
-    driver = webdriver.Firefox()
-    request.addfinalizer(driver.quit)
-    return driver
-
-
-def random_string(key, len):
-    symbols = string.ascii_letters + string.digits
-    return "".join([random.choice(symbols) for i in range(len)])
+from python_example.lib.random_string import random_string
+from python_example.lib.fixture import driver
 
 
 def test_l11(driver):

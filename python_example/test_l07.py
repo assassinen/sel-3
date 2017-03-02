@@ -2,18 +2,10 @@ __author__ = 'NovikovII'
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import pytest
-from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-
-
-@pytest.fixture
-def driver(request):
-    driver = webdriver.Firefox()
-    request.addfinalizer(driver.quit)
-    return driver
+from python_example.lib.fixture import driver
 
 
 def test_l07(driver):
@@ -30,7 +22,6 @@ def test_l07(driver):
         menu_items = driver.find_elements_by_css_selector("ul#box-apps-menu > li")
         menu_items[menu_number].click()
         element = wait.until(EC.presence_of_element_located((By.TAG_NAME, "h1")))
-
 
         submenu_number = len(driver.find_elements_by_css_selector(".docs>li>a"))
         while submenu_number:

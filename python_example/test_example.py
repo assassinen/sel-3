@@ -1,14 +1,7 @@
-import pytest
-from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from python_example.lib.fixture import driver
 
-
-@pytest.fixture
-def driver(request):
-    wd = webdriver.Firefox()
-    request.addfinalizer(wd.quit)
-    return wd
 
 
 def test_example(driver):

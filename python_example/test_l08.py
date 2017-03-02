@@ -2,16 +2,8 @@ __author__ = 'NovikovII'
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import pytest
-from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
-
-
-@pytest.fixture
-def driver(request):
-    driver = webdriver.Firefox()
-    request.addfinalizer(driver.quit)
-    return driver
+from python_example.lib.fixture import driver
 
 
 def test_l08(driver):
