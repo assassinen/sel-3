@@ -4,8 +4,8 @@ __author__ = 'NovikovII'
 
 from python_example.lib.fixture import driver
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
 
 
@@ -25,8 +25,9 @@ def test_l14(driver):
     for link in links:
         link.click()
         new_window = [i for i in driver.window_handles if i != main_window]
+        wait.until(EC.new_window_is_opened(new_window))
+
         for window in new_window:
-            wait.until(EC.new_window_is_opened(window))
             driver.switch_to.window(window)
             driver.close()
         driver.switch_to.window(main_window)

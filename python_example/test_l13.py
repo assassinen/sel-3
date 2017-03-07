@@ -4,10 +4,6 @@ __author__ = 'NovikovII'
 
 from python_example.lib.fixture import driver
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException
-import time
-
 
 
 def add_to_cart(driver, count = 1):

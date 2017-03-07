@@ -30,3 +30,5 @@ def test_l07(driver):
             submenu_items[submenu_number].click()
             element = wait.until(EC.presence_of_element_located((By.TAG_NAME, "h1")))
 
+            aaa = EC.number_of_windows_to_be(1)
+
