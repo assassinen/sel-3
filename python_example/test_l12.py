@@ -2,13 +2,14 @@ __author__ = 'NovikovII'
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from python_example.lib.fixture import driver
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.alert import Alert
-from python_example.lib.random_string import random_string
-import os
 import datetime
+import os
+
+from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.wait import WebDriverWait
+
+from python_example.fixture.random_string import random_string
 
 
 def set_general(driver, name):
