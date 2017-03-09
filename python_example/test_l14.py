@@ -6,7 +6,6 @@ from python_example.fixture.fixture import driver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-
 from python_example.fixture.fixture import driver
 
 
@@ -22,24 +21,24 @@ def test_l14(driver):
 
     main_window = driver.current_window_handle
     links = driver.find_elements_by_css_selector(".fa.fa-external-link")
-    for link in links:
-        link.click()
-
-    new_window = [i for i in driver.window_handles if i != main_window]
-    wait.until(EC.new_window_is_opened(new_window))
-
-    for window in new_window:
-        driver.switch_to.window(window)
-
-    driver.switch_to.window(main_window)
-
-
     # for link in links:
     #     link.click()
-    #     new_window = [i for i in driver.window_handles if i != main_window]
-    #     wait.until(EC.new_window_is_opened(new_window))
     #
-    #     for window in new_window:
-    #         driver.switch_to.window(window)
-    #         driver.close()
-    #     driver.switch_to.window(main_window)
+    # new_window = [i for i in driver.window_handles if i != main_window]
+    # wait.until(EC.new_window_is_opened(new_window))
+    #
+    # for window in new_window:
+    #     driver.switch_to.window(window)
+    #
+    # driver.switch_to.window(main_window)
+
+
+    for link in links:
+        link.click()
+        new_window = [i for i in driver.window_handles if i != main_window]
+        wait.until(EC.new_window_is_opened(new_window))
+
+        for window in new_window:
+            driver.switch_to.window(window)
+            driver.close()
+        driver.switch_to.window(main_window)
