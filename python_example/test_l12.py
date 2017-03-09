@@ -8,7 +8,7 @@ import os
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.wait import WebDriverWait
-
+from python_example.fixture.fixture import driver
 from python_example.fixture.random_string import random_string
 
 

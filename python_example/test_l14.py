@@ -2,11 +2,12 @@ __author__ = 'NovikovII'
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from python_example.lib.fixture import driver
+from python_example.fixture.fixture import driver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
+from selenium.webdriver.support.wait import WebDriverWait
 
+from python_example.fixture.fixture import driver
 
 
 def test_l14(driver):
@@ -29,7 +30,7 @@ def test_l14(driver):
 
     for window in new_window:
         driver.switch_to.window(window)
-        driver.close()
+
     driver.switch_to.window(main_window)
 
 

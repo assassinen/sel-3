@@ -2,7 +2,7 @@ __author__ = 'NovikovII'
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from python_example.lib.fixture import driver
+from python_example.fixture.fixture import driver
 from selenium.webdriver.support.wait import WebDriverWait
 
 

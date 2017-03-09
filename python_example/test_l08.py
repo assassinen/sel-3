@@ -3,7 +3,7 @@ __author__ = 'NovikovII'
 # -*- coding: utf-8 -*-
 
 from selenium.webdriver.support.wait import WebDriverWait
-from python_example.lib.fixture import driver
+from python_example.fixture.fixture import driver
 
 
 def test_l08(driver):

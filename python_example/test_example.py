@@ -1,7 +1,6 @@
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from python_example.lib.fixture import driver
-
+from selenium.webdriver.support.wait import WebDriverWait
+from python_example.fixture.fixture import driver
 
 
 def test_example(driver):
